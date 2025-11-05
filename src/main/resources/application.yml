@@ -1,3 +1,7 @@
 spring:
   application:
     name: spring-graphql
+
+  threads:
+    virtual:
+      enabled: true

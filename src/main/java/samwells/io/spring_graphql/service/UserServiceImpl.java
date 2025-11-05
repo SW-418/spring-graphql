@@ -1,5 +1,7 @@
 package samwells.io.spring_graphql.service;
 
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 import samwells.io.spring_graphql.codegen.types.User;
 
@@ -8,6 +10,7 @@ import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.CompletableFuture;
 
+@Slf4j
 @Service
 public class UserServiceImpl implements UserService {
     private final Map<String, User> users;
@@ -25,13 +28,17 @@ public class UserServiceImpl implements UserService {
         );
     }
 
+    @Async
     @Override
     public CompletableFuture<List<User>> getUsers() {
+        log.info("Retrieving all users");
         return CompletableFuture.completedFuture(users.values().stream().toList());
     }
 
+    @Async
     @Override
     public CompletableFuture<User> getUser(String id) {
+        log.info("Retrieving user {}", id);
         return CompletableFuture.completedFuture(users.get(id));
     }
 }
