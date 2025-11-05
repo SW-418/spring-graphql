@@ -1,4 +1,4 @@
-package samwells.io.spring_graphql.service;
+package samwells.io.spring_graphql.service.user;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.Async;

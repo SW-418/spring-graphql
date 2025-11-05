@@ -1,4 +1,4 @@
-package samwells.io.spring_graphql.service;
+package samwells.io.spring_graphql.service.user;
 
 import samwells.io.spring_graphql.codegen.types.User;
 
