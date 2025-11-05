@@ -3,36 +3,25 @@ package samwells.io.spring_graphql.fetcher;
 import com.netflix.graphql.dgs.DgsComponent;
 import com.netflix.graphql.dgs.DgsQuery;
 import com.netflix.graphql.dgs.InputArgument;
+import lombok.AllArgsConstructor;
 import samwells.io.spring_graphql.codegen.types.User;
+import samwells.io.spring_graphql.service.UserService;
 
 import java.util.List;
-import java.util.Map;
-import java.util.UUID;
+import java.util.concurrent.CompletableFuture;
 
 @DgsComponent
+@AllArgsConstructor
 public class UserDataFetcher {
-    private final Map<String, User> users;
+    private final UserService userService;
 
-    public UserDataFetcher() {
-        User u1 = new User(UUID.randomUUID().toString(), "S", "W");
-        User u2 = new User(UUID.randomUUID().toString(), "S", "B");
-        User u3 = new User(UUID.randomUUID().toString(), "C", "W");
-        User u4 = new User(UUID.randomUUID().toString(), "C", "B");
-        this.users = Map.of(
-                u1.getId(), u1,
-                u2.getId(), u2,
-                u3.getId(), u3,
-                u4.getId(), u4
-        );
+    @DgsQuery
+    CompletableFuture<List<User>> getUsers() {
+        return userService.getUsers();
     }
 
     @DgsQuery
-    List<User> getUsers() {
-        return users.values().stream().toList();
-    }
-
-    @DgsQuery
-    User getUser(@InputArgument String id) {
-        return users.get(id);
+    CompletableFuture<User> getUser(@InputArgument String id) {
+        return userService.getUser(id);
     }
 }
