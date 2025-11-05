@@ -30,10 +30,17 @@ ext {
 }
 
 dependencies {
+    // Spring Boot Starters
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+
+    // Netflix DGS
 	implementation 'com.netflix.graphql.dgs:graphql-dgs-spring-graphql-starter'
-	compileOnly 'org.projectlombok:lombok'
+
+    // Lombok
+    compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
+
+    // Testing
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'com.netflix.graphql.dgs:graphql-dgs-spring-graphql-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
