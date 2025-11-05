@@ -1,0 +1,5 @@
+services:
+  artists-api:
+    build: artists-api/
+    ports:
+      - "5001:5000"
