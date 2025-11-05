@@ -5,7 +5,7 @@ import com.netflix.graphql.dgs.DgsQuery;
 import com.netflix.graphql.dgs.InputArgument;
 import lombok.AllArgsConstructor;
 import samwells.io.spring_graphql.codegen.types.User;
-import samwells.io.spring_graphql.service.UserService;
+import samwells.io.spring_graphql.service.user.UserService;
 
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
