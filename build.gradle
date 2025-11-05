@@ -53,10 +53,12 @@ dependencyManagement {
 }
 
 generateJava {
-	schemaPaths = ["${projectDir}/src/main/resources/graphql-client"]
+	schemaPaths = ["${projectDir}/src/main/resources/schema"]
 	packageName = 'samwells.io.spring_graphql.codegen'
 	generateClient = true
 }
+
+compileJava.dependsOn(generateJava)
 
 tasks.named('test') {
 	useJUnitPlatform()
