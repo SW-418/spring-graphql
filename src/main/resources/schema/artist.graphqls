@@ -1,0 +1,9 @@
+type Artist {
+    id: ID!
+    name: String!
+}
+
+extend type Query {
+    getArtist(id: ID!): Artist
+    getArtists: [Artist!]!
+}
