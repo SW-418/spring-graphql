@@ -8,7 +8,6 @@ import samwells.io.spring_graphql.codegen.types.User;
 import samwells.io.spring_graphql.service.user.UserService;
 
 import java.util.List;
-import java.util.concurrent.CompletableFuture;
 
 @DgsComponent
 @AllArgsConstructor
@@ -16,12 +15,12 @@ public class UserDataFetcher {
     private final UserService userService;
 
     @DgsQuery
-    CompletableFuture<List<User>> getUsers() {
+    List<User> getUsers() {
         return userService.getUsers();
     }
 
     @DgsQuery
-    CompletableFuture<User> getUser(@InputArgument String id) {
+    User getUser(@InputArgument String id) {
         return userService.getUser(id);
     }
 }

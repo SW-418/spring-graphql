@@ -8,7 +8,6 @@ import samwells.io.spring_graphql.codegen.types.Artist;
 import samwells.io.spring_graphql.service.artist.ArtistService;
 
 import java.util.List;
-import java.util.concurrent.CompletableFuture;
 
 @DgsComponent
 @AllArgsConstructor
@@ -16,12 +15,12 @@ public class ArtistDataFetcher {
     private final ArtistService artistService;
 
     @DgsQuery
-    CompletableFuture<List<Artist>> getArtists() {
+    List<Artist> getArtists() {
         return artistService.getArtists();
     }
 
     @DgsQuery
-    CompletableFuture<Artist> getArtist(@InputArgument String id) {
+    Artist getArtist(@InputArgument String id) {
         return artistService.getArtist(id);
     }
 }
