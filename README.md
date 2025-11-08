@@ -7,6 +7,6 @@ Leveraging a few different mechanisms for data retrieval including:
 - Albums - Postgres DB
 
 ### Running Locally
-1. `docker compose up` - Spins up Python API service
+1. `docker compose up` - Spins up Python API service + postgres db
 2. `./gradlew bootRun` - Spins up java graphql service
 3. Make requests to `http://localhost:8080/graphql`
