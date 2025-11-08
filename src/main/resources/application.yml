@@ -2,6 +2,20 @@ spring:
   application:
     name: spring-graphql
 
+  datasource:
+    url: jdbc:postgresql://localhost:5433/label_db
+    username: postgres
+    password: postgres
+
+  jpa:
+    defer-datasource-initialization: true         # Defers data.sql script execution until hibernate loads + generates tables
+    hibernate:
+      ddl-auto: create-drop
+
+  sql:
+    init:
+      mode: always
+
   threads:
     virtual:
       enabled: true
