@@ -1,0 +1,10 @@
+type RecordLabel {
+    id: ID!
+    name: String!
+    established: String!
+}
+
+extend type Query {
+    getRecordLabel(id: ID!): RecordLabel
+    getRecordLabels: [RecordLabel!]!
+}
