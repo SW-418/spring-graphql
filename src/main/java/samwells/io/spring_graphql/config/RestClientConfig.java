@@ -10,7 +10,7 @@ public class RestClientConfig {
     RestClient restClient() {
         return RestClient.builder()
                 // TODO: Pull from env config
-                .baseUrl("http://localhost:5001")
+                .baseUrl("http://artists-api:5000")
                 .build();
     }
 }

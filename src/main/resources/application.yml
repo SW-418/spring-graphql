@@ -3,7 +3,7 @@ spring:
     name: spring-graphql
 
   datasource:
-    url: jdbc:postgresql://localhost:5433/label_db
+    url: jdbc:postgresql://label-db:5432/label_db
     username: postgres
     password: postgres
 

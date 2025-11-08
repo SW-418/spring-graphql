@@ -11,3 +11,7 @@ services:
       POSTGRES_DB: label_db
     ports:
       - "5433:5432"
+  spring-graphql:
+    build: .
+    ports:
+      - "8080:8080"

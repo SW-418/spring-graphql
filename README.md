@@ -7,6 +7,5 @@ Leveraging a few different mechanisms for data retrieval including:
 - Record Labels - Postgres DB running in a container
 
 ### Running Locally
-1. `docker compose up` - Spins up Python API service + postgres db
-2. `./gradlew bootRun` - Spins up java graphql service
-3. Make requests to `http://localhost:8080/graphql`
+1. `docker compose up` - Spins up Spring Boot GraphQL service, Python API service + postgres db
+2. Make requests to `http://localhost:8080/graphql`
